@@ -5,22 +5,22 @@
 typedef int Elemtype ;
 
 typedef struct {
-	Elemtype data[MaxSize];		//´´½¨Ò»¸ö³¤¶ÈÎ»MaxSizeµÄ±í 
-	int length;					//ÏßĞÔ±íµÄµ±Ç°³¤¶È 
+	Elemtype data[MaxSize];		//åˆ›å»ºä¸€ä¸ªé•¿åº¦ä½MaxSizeçš„è¡¨ 
+	int length;					//çº¿æ€§è¡¨çš„å½“å‰é•¿åº¦ 
 }SqList;
 
 
-bool InitList(SqList &L);				//³õÊ¼»¯ÏßĞÔ±í 
-bool ListInsert(SqList &L,int i,Elemtype e);	//µÚi¸öÎ»ÖÃ²åÈëÔªËØe 
-bool ListDelet(SqList &L,int i);	// É¾³ıµÚi¸öÔªËØ£¬²¢½«ÔªËØÓÃe·µ»Ø
-int LocateElem(SqList L,Elemtype e);			//²éÕÒÔªËØe£¬²¢·µ»ØÎ»ÖÃ¡£
-void print(SqList);		//´òÓ¡µ±Ç°±í 
-Elemtype yi(SqList &L);		//22ÍõµÀ17Ò³ ¶ş£¬1 Ìâ 
-int er(SqList &L);			//22ÍõµÀ17Ò³ ¶ş£¬2 Ìâ	½«ÔªËØÄæÖÃ£¬ÇÒ¿Õ¼ä¸´ÔÓ¶ÈÎªO(1)
-int san(SqList &L,int x);	//22ÍõµÀ17Ò³ ¶ş£¬3 Ìâ Ê±¼ä¸´ÔÓ¶ÈÎªO(n),¿Õ¼ä¸´ÔÓ¶ÈÎªO(1),É¾³ıËùÓĞÖµÎªxµÄÔªËØ 
-int si(SqList &L,int s,int l);	//22ÍõµÀ17Ò³ ¶ş£¬4 Ìâ ÓĞĞòË³Ğò±íÉ¾³ıÖµÔÚ¸ø¶¨Öµs-lÖ®¼äµÄËùÓĞÔªËØ
-int liu(SqList &L);			//17Ò³£¬µÚ6Ìâ£¬É¾³ıË³Ğò±íÖĞËùÓĞÖØ¸´µÄÔªËØ¡£
-int shi(SqList &L,int p);	//½«LÖĞ±£´æµÄĞòÁĞÑ­»·Ïò×óÒÆ¶¯p¸öÎ»ÖÃ Ê±¼äºÍ¿Õ¼ä¾¡¿ÉÄÜ¸ßĞ§¡£ 
+bool InitList(SqList &L);				//åˆå§‹åŒ–çº¿æ€§è¡¨ 
+bool ListInsert(SqList &L,int i,Elemtype e);	//ç¬¬iä¸ªä½ç½®æ’å…¥å…ƒç´ e 
+bool ListDelet(SqList &L,int i);	// åˆ é™¤ç¬¬iä¸ªå…ƒç´ ï¼Œå¹¶å°†å…ƒç´ ç”¨eè¿”å›
+int LocateElem(SqList L,Elemtype e);			//æŸ¥æ‰¾å…ƒç´ eï¼Œå¹¶è¿”å›ä½ç½®ã€‚
+void print(SqList);		//æ‰“å°å½“å‰è¡¨ 
+Elemtype yi(SqList &L);		//22ç‹é“17é¡µ äºŒï¼Œ1 é¢˜ 
+int er(SqList &L);			//22ç‹é“17é¡µ äºŒï¼Œ2 é¢˜	å°†å…ƒç´ é€†ç½®ï¼Œä¸”ç©ºé—´å¤æ‚åº¦ä¸ºO(1)
+int san(SqList &L,int x);	//22ç‹é“17é¡µ äºŒï¼Œ3 é¢˜ æ—¶é—´å¤æ‚åº¦ä¸ºO(n),ç©ºé—´å¤æ‚åº¦ä¸ºO(1),åˆ é™¤æ‰€æœ‰å€¼ä¸ºxçš„å…ƒç´  
+int si(SqList &L,int s,int l);	//22ç‹é“17é¡µ äºŒï¼Œ4 é¢˜ æœ‰åºé¡ºåºè¡¨åˆ é™¤å€¼åœ¨ç»™å®šå€¼s-lä¹‹é—´çš„æ‰€æœ‰å…ƒç´ 
+int liu(SqList &L);			//17é¡µï¼Œç¬¬6é¢˜ï¼Œåˆ é™¤é¡ºåºè¡¨ä¸­æ‰€æœ‰é‡å¤çš„å…ƒç´ ã€‚
+int shi(SqList &L,int p);	//å°†Lä¸­ä¿å­˜çš„åºåˆ—å¾ªç¯å‘å·¦ç§»åŠ¨pä¸ªä½ç½® æ—¶é—´å’Œç©ºé—´å°½å¯èƒ½é«˜æ•ˆã€‚ 
 
 int main(){
 	SqList L;
@@ -34,50 +34,50 @@ int main(){
 		}
 	printf("Init success!\n");
 	
-	for(int i=0,locate=0;i<6;i++,locate++){		//¸øÇ°5¸öÊı¾İ¸³Öµ 
+	for(int i=0,locate=0;i<6;i++,locate++){		//ç»™å‰5ä¸ªæ•°æ®èµ‹å€¼ 
 //		printf("please input your data:");
 //		scanf("%d",&j);
 		ListInsert(L,i,i+1);	
 	}
 	print(L); 
 	
-//	ListInsert(L,3,20);				//ÔÚµÚ8Î»²åÈëÊı¾İ20 
-//	ListInsert(L,80,20);			//²âÊÔ·Ç·¨Î»ÖÃ 
+//	ListInsert(L,3,20);				//åœ¨ç¬¬8ä½æ’å…¥æ•°æ®20 
+//	ListInsert(L,80,20);			//æµ‹è¯•éæ³•ä½ç½® 
 	
 /*	print(L)*/
 	
-//	ListDelet(L,8,e);				//É¾³ıµÚ8Î»µÄÊı¾İ²¢Ê¹ÓÃe´ø»Ø 
+//	ListDelet(L,8,e);				//åˆ é™¤ç¬¬8ä½çš„æ•°æ®å¹¶ä½¿ç”¨eå¸¦å› 
 //	printf("%d\n",e);
 	
 	 
 //	print(L);
 	
-//	place=LocateElem(L,0);			//»ñÈ¡Òª²éÕÒµÄÊı¾İµÄÎ»ÖÃ 
+//	place=LocateElem(L,0);			//è·å–è¦æŸ¥æ‰¾çš„æ•°æ®çš„ä½ç½® 
 //	if(place==0)
 //		printf("The list dont have this data\n"); 
 //	else
 //		printf("%d\n",place);
 			
-//	printf("µÚÒ»Ìâ£º%d\n",yi(L));		//22ÍõµÀ17Ò³ ¶ş£¬1 Ìâ 
-//	er(L);			//22ÍõµÀ17Ò³ ¶ş£¬2 Ìâ 
+//	printf("ç¬¬ä¸€é¢˜ï¼š%d\n",yi(L));		//22ç‹é“17é¡µ äºŒï¼Œ1 é¢˜ 
+//	er(L);			//22ç‹é“17é¡µ äºŒï¼Œ2 é¢˜ 
 //	print(L);
 	
 //	san(L,3);
 //	print(L);	
 	
-//	//µÚËÄÌâ
+//	//ç¬¬å››é¢˜
 //	int s,l;
 //	printf("input:");
 //	scanf("%d%d",&s,&l); 
 //	si(L,s,l);
 
 
-//	//µÚÁùÌâ
+//	//ç¬¬å…­é¢˜
 //	liu(L); 
 //	print(L);
 
 
-	//µÚÊ®Ìâ
+	//ç¬¬åé¢˜
 	int p;
 	printf("p:");
 	scanf("%d",&p);
@@ -96,7 +96,7 @@ int main(){
 
 
 
-bool InitList(SqList &L)				//³õÊ¼»¯ÏßĞÔ±í 
+bool InitList(SqList &L)				//åˆå§‹åŒ–çº¿æ€§è¡¨ 
 {
 	for(int i;i<MaxSize;i++)
 	{
@@ -105,17 +105,17 @@ bool InitList(SqList &L)				//³õÊ¼»¯ÏßĞÔ±í
 	L.length=0;
 	return true;
 } 
-bool ListInsert(SqList &L,int i,Elemtype e)		//µÚi¸öÎ»ÖÃ²åÈëÔªËØe 
+bool ListInsert(SqList &L,int i,Elemtype e)		//ç¬¬iä¸ªä½ç½®æ’å…¥å…ƒç´ e 
 {
-	 if(i<0||i>MaxSize){		//ÅĞ¶ÏÎ»ÖÃÊÇ·ñºÏ·¨ 
+	 if(i<0||i>MaxSize){		//åˆ¤æ–­ä½ç½®æ˜¯å¦åˆæ³• 
 	 	printf("The place was false!\nInsert false!\n");
 	 	return false;
 	 }
-	 if(L.length==MaxSize){		//ÅĞ¶ÏÏßĞÔ±íµ±Ç°ÊÇ·ñÒÑÂú 
+	 if(L.length==MaxSize){		//åˆ¤æ–­çº¿æ€§è¡¨å½“å‰æ˜¯å¦å·²æ»¡ 
 	 	printf("List has full!\n");
 	 	return false;
 	 } 
-	 for(int j=L.length;j>=i;j--){		//²åÈë²Ù×÷ 
+	 for(int j=L.length;j>=i;j--){		//æ’å…¥æ“ä½œ 
 	 	L.data[j+1]=L.data[j];
 	 }
 	 L.data[i]=e;
@@ -123,7 +123,7 @@ bool ListInsert(SqList &L,int i,Elemtype e)		//µÚi¸öÎ»ÖÃ²åÈëÔªËØe
 	 return true;
 	 
 } 
-bool ListDelet(SqList &L,int i)		// É¾³ıµÚi¸öÔªËØ£¬²¢½«ÔªËØÓÃe·µ»Ø
+bool ListDelet(SqList &L,int i)		// åˆ é™¤ç¬¬iä¸ªå…ƒç´ ï¼Œå¹¶å°†å…ƒç´ ç”¨eè¿”å›
 {
 	if(i<0||i>MaxSize){
 	 	printf("The place was false!\n");
@@ -135,32 +135,32 @@ bool ListDelet(SqList &L,int i)		// É¾³ıµÚi¸öÔªËØ£¬²¢½«ÔªËØÓÃe·µ»Ø
 	L.length--;
 	return true;
 } 
-int LocateElem(SqList L,Elemtype e)				//²éÕÒÔªËØe£¬²¢·µ»ØÎ»ÖÃ¡£
+int LocateElem(SqList L,Elemtype e)				//æŸ¥æ‰¾å…ƒç´ eï¼Œå¹¶è¿”å›ä½ç½®ã€‚
 {
 	int i=0;
 	for(int i=0;i<L.length;i++){
 		if(L.data[i]==e)
-			return i+1;		//Î»ÖÃ´Ó0¿ªÊ¼¼ÆËã£¬ËùÒÔ·µ»ØÖµ¼Ó1£¬Ïàµ±ÓÚÎ»ÖÃ´Ó1¿ªÊ¼¼ÆËã 
-							//±ãÓÚ¹Û²ì 
+			return i+1;		//ä½ç½®ä»0å¼€å§‹è®¡ç®—ï¼Œæ‰€ä»¥è¿”å›å€¼åŠ 1ï¼Œç›¸å½“äºä½ç½®ä»1å¼€å§‹è®¡ç®— 
+							//ä¾¿äºè§‚å¯Ÿ 
 	}
 	i=0;
 	return i; 
 		
 } 
 
-void print(SqList L)			//´òÓ¡µ±Ç°ÏßĞÔ±í
+void print(SqList L)			//æ‰“å°å½“å‰çº¿æ€§è¡¨
 {
-	for(int i=0;i<L.length;i++){	//´òÓ¡µ±Ç°ÏßĞÔ±í 
+	for(int i=0;i<L.length;i++){	//æ‰“å°å½“å‰çº¿æ€§è¡¨ 
 		printf("%d   ",L.data[i]);	
 	}
 	printf("\n");
 
 } 
 
-//	1.´ÓË³Ğò±íÖĞÉ¾³ı¾ßÓĞ×îĞ¡ÖµµÄÔªËØ£¬²¢ÓÉº¯Êı·´»Ø±»É¾ÔªËØµÄÖµ¡£¿Õ³öµÄÎ»ÖÃ
-//	   ÓÉ×îºóÒ»¸öÔªËØÌî²¹£¬ÈôË³Ğò±íÎª¿Õ£¬ÔòÏÔÊ¾³ö´íĞÅÏ¢²¢ÍÆ³öÔËĞĞ¡£
+//	1.ä»é¡ºåºè¡¨ä¸­åˆ é™¤å…·æœ‰æœ€å°å€¼çš„å…ƒç´ ï¼Œå¹¶ç”±å‡½æ•°åå›è¢«åˆ å…ƒç´ çš„å€¼ã€‚ç©ºå‡ºçš„ä½ç½®
+//	   ç”±æœ€åä¸€ä¸ªå…ƒç´ å¡«è¡¥ï¼Œè‹¥é¡ºåºè¡¨ä¸ºç©ºï¼Œåˆ™æ˜¾ç¤ºå‡ºé”™ä¿¡æ¯å¹¶æ¨å‡ºè¿è¡Œã€‚
 
-Elemtype yi(SqList &L){		//22ÍõµÀ17Ò³ ¶ş£¬1 Ìâ
+Elemtype yi(SqList &L){		//22ç‹é“17é¡µ äºŒï¼Œ1 é¢˜
 	if(L.length==0){
 		printf("The list is empty!\n");
 		exit(0);
@@ -176,7 +176,7 @@ Elemtype yi(SqList &L){		//22ÍõµÀ17Ò³ ¶ş£¬1 Ìâ
 }
  
 
-int er(SqList &L)			//22ÍõµÀ17Ò³ ¶ş£¬2 Ìâ	½«ÔªËØÄæÖÃ£¬ÇÒ¿Õ¼ä¸´ÔÓ¶ÈÎªO(1)
+int er(SqList &L)			//22ç‹é“17é¡µ äºŒï¼Œ2 é¢˜	å°†å…ƒç´ é€†ç½®ï¼Œä¸”ç©ºé—´å¤æ‚åº¦ä¸ºO(1)
 {
 	Elemtype x;
 	for(int i=0;i<L.length/2;i++){
@@ -185,12 +185,12 @@ int er(SqList &L)			//22ÍõµÀ17Ò³ ¶ş£¬2 Ìâ	½«ÔªËØÄæÖÃ£¬ÇÒ¿Õ¼ä¸´ÔÓ¶ÈÎªO(1)
 	return 0;
 }
 
-int san(SqList &L,int x)	//Ê±¼ä¸´ÔÓ¶ÈÎªO(n),¿Õ¼ä¸´ÔÓ¶ÈÎªO(1),É¾³ıËùÓĞÖµÎªxµÄÔªËØ
+int san(SqList &L,int x)	//æ—¶é—´å¤æ‚åº¦ä¸ºO(n),ç©ºé—´å¤æ‚åº¦ä¸ºO(1),åˆ é™¤æ‰€æœ‰å€¼ä¸ºxçš„å…ƒç´ 
 {
 	int k=0;;
 	for(int i=0;i<L.length;i++){
-//		if(L.data[i]==x){		//´íÎó£¬Ê±¼ä¸´ÔÓ¶ÈÎªO(n^2),ListDeltµÄ¸´ÔÓ¶ÈÒ²Îªn 
-//			ListDelet(L,i,e);	//¹ÊÊ±¼ä¸´ÔÓ¶È²»·ûºÏÌâÄ¿ÒªÇó 
+//		if(L.data[i]==x){		//é”™è¯¯ï¼Œæ—¶é—´å¤æ‚åº¦ä¸ºO(n^2),ListDeltçš„å¤æ‚åº¦ä¹Ÿä¸ºn 
+//			ListDelet(L,i,e);	//æ•…æ—¶é—´å¤æ‚åº¦ä¸ç¬¦åˆé¢˜ç›®è¦æ±‚ 
 //			i--;
 //		}
 		if(L.data[i]!=x){
@@ -202,16 +202,16 @@ int san(SqList &L,int x)	//Ê±¼ä¸´ÔÓ¶ÈÎªO(n),¿Õ¼ä¸´ÔÓ¶ÈÎªO(1),É¾³ıËùÓĞÖµÎªxµÄÔªËØ
 	return 0; 
 } 
 
-int si(SqList &L,int s,int l)	//22ÍõµÀ17Ò³ ¶ş£¬4 Ìâ 
-//								ÓĞĞòË³Ğò±íÉ¾³ıÖµÔÚ¸ø¶¨Öµs-lÖ®¼äµÄËùÓĞÔªËØ
+int si(SqList &L,int s,int l)	//22ç‹é“17é¡µ äºŒï¼Œ4 é¢˜ 
+//								æœ‰åºé¡ºåºè¡¨åˆ é™¤å€¼åœ¨ç»™å®šå€¼s-lä¹‹é—´çš„æ‰€æœ‰å…ƒç´ 
 {
 	int i=0,j=0;
 	if(s>l){
 		printf("the data is illegal!\n");
 		return 0;	
 	}		
-	i=LocateElem(L,s);	//¶¨Î»s¡£ 
-	j=i+(l-s);			//¸ù¾İsµÄÎ»ÖÃ¶¨Î»lµÄÎ»ÖÃ¡£ 
+	i=LocateElem(L,s);	//å®šä½sã€‚ 
+	j=i+(l-s);			//æ ¹æ®sçš„ä½ç½®å®šä½lçš„ä½ç½®ã€‚ 
 	if(i==0){
 		printf("the list dont have this data!\n");
 		return 0;
@@ -223,7 +223,7 @@ int si(SqList &L,int s,int l)	//22ÍõµÀ17Ò³ ¶ş£¬4 Ìâ
 	L.length=L.length-(l-s)-1; 
 }
 
-int liu(SqList &L){			//17Ò³£¬µÚ6Ìâ£¬É¾³ıË³Ğò±íÖĞËùÓĞÖØ¸´µÄÔªËØ¡£
+int liu(SqList &L){			//17é¡µï¼Œç¬¬6é¢˜ï¼Œåˆ é™¤é¡ºåºè¡¨ä¸­æ‰€æœ‰é‡å¤çš„å…ƒç´ ã€‚
 	Elemtype temp; 
 	for(int i=0;i<L.length;i++){
 		temp=L.data[i];
@@ -231,20 +231,20 @@ int liu(SqList &L){			//17Ò³£¬µÚ6Ìâ£¬É¾³ıË³Ğò±íÖĞËùÓĞÖØ¸´µÄÔªËØ¡£
 				
 			if(temp==L.data[j])		 
 				ListDelet(L,j),j--;
-				/*É¾¼õÍêÒ»¸öÊı¾İºóËùÓĞÊı¾İ»áÇ°ÒÆÒ»Î»
-				 ¶øjµÄÖ¸ÏòµÄÎ»ÖÃÒ²»áÇ°ÒÆÒ»Î»
-				 ¹ÊĞè½«j-1; 
+				/*åˆ å‡å®Œä¸€ä¸ªæ•°æ®åæ‰€æœ‰æ•°æ®ä¼šå‰ç§»ä¸€ä½
+				 è€Œjçš„æŒ‡å‘çš„ä½ç½®ä¼šåç§»ä¸€ä½ï¼Œæ•…ä¼šæ¼æ‰ä¸€ä¸ªæ•°æ®ï¼Œè€Œé€ æˆè¾“å‡ºç»“æœæœ‰è¯¯
+				 æ•…éœ€å°†j-1; 
 				 */ 
 		}
 	} 
 	return 0;
 } 
 
-int shi(SqList &L,int p)	//½«LÖĞ±£´æµÄĞòÁĞÑ­»·Ïò×óÒÆ¶¯p¸öÎ»ÖÃ£¬Ê±¼äºÍ¿Õ¼ä¾¡¿ÉÄÜ¸ßĞ§ 
+int shi(SqList &L,int p)	//å°†Lä¸­ä¿å­˜çš„åºåˆ—å¾ªç¯å‘å·¦ç§»åŠ¨pä¸ªä½ç½®ï¼Œæ—¶é—´å’Œç©ºé—´å°½å¯èƒ½é«˜æ•ˆ 
 {
-	Elemtype temp; 		//¶¨ÒåÒ»¸ö»º³åÇø 
-	//Ñ­»·Ïò×óÒÆ¡£Ê±¼ä¸´ÔÓ¶ÈO(n),¿Õ¼ä¸´ÔÓ¶ÈO(1)
-	//Ïò×óÒÆp´Î£¬¼´ÏòÓÒÒÆn-p´Î¡£ 
+	Elemtype temp; 		//å®šä¹‰ä¸€ä¸ªç¼“å†²åŒº 
+	//å¾ªç¯å‘å·¦ç§»ã€‚æ—¶é—´å¤æ‚åº¦O(n),ç©ºé—´å¤æ‚åº¦O(1)
+	//å‘å·¦ç§»pæ¬¡ï¼Œå³å‘å³ç§»n-pæ¬¡ã€‚ 
 	for(int i=0;i<p;i++){
 		
 		for(int j=0;j<L.length;j++){
