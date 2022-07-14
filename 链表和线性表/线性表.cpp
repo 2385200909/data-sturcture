@@ -242,17 +242,32 @@ int liu(SqList &L){			//17页，第6题，删除顺序表中所有重复的元�
 
 int shi(SqList &L,int p)	//将L中保存的序列循环向左移动p个位置，时间和空间尽可能高效 
 {
-	Elemtype temp; 		//定义一个缓冲区 
-	//循环向左移。时间复杂度O(n),空间复杂度O(1)
-	//向左移p次，即向右移n-p次。 
-	for(int i=0;i<p;i++){
-		
-		for(int j=0;j<L.length;j++){
-			temp=L.data[j];
-			L.data[j]=L.data[(j+1)%L.length];
-			L.data[(j+1)%L.length]=temp;
-		}
-		print(L);
+//	Elemtype temp; 		//定义一个缓冲区 
+//	//循环向左移。时间复杂度O(n*p),空间复杂度O(1)
+//	//向左移p次，即向右移n-p次。 
+//	for(int i=0;i<p;i++){
+//		
+//		for(int j=0;j<L.length-1;j++){
+//			temp=L.data[j];
+//			L.data[j]=L.data[(j+1)%L.length];
+//			L.data[(j+1)%L.length]=temp; 
+//		}
+//		print(L);
+//	}
+//	 printf("\n");
+
+
+
+	SqList temp;	//定义一个和线性表一样长的缓冲区。 
+	InitList(temp);
+	
+	temp=L;		//赋值
+	/*核心思想：将线性表赋值给缓冲区，从缓冲区中直接获取数据赋值到
+	L中，使得时间复杂度为O(n),空间复杂度为O(n); */
+	
+	for(int i=0;i<L.length;i++){
+			L.data[(i+p)%L.length]=temp.data[i];
+	//暂时还没有想到更高效的方法，如果有别的方法，欢迎指正。
 	}
-	 printf("\n");
-}
+	
+	
